@@ -1,6 +1,7 @@
 package nl.valori.pageobjects;
 
 
+import nl.valori.SharedObjects;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 
@@ -12,7 +13,7 @@ public class PartnersPage extends AbstractPageObjectModel {
     List<String> partners;
 
     public void navigateTo() {
-        getDriver().get("https://www.valori.nl/partners");
+        getDriver().get(SharedObjects.url + "/partners");
     }
 
     public List<String> getPartners() {
