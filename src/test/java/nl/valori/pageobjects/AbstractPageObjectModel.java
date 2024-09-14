@@ -6,7 +6,7 @@ import org.openqa.selenium.WebDriver;
 public class AbstractPageObjectModel {
 
     public WebDriver getDriver(){
-        return SharedObjects.getChromeDriver();
+        return SharedObjects.getDriver();
     }
 
     public String getTitle(){

@@ -9,7 +9,7 @@ public class SharedObjects {
     }
 
     static WebDriver driver;
-    public static WebDriver getChromeDriver() {
+    public static WebDriver getDriver() {
         if (driver == null) {
             driver = new ChromeDriver();
             return driver;

@@ -54,6 +54,6 @@ public class ValoriStepDefs {
 
     @AfterAll
     public static void cleanUp() {
-        SharedObjects.getChromeDriver().close();
+        SharedObjects.getDriver().close();
     }
 }
