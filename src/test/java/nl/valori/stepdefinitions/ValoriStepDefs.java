@@ -8,6 +8,7 @@ import nl.valori.SharedObjects;
 import nl.valori.pageobjects.HomePage;
 import nl.valori.pageobjects.PartnersPage;
 
+import java.util.Arrays;
 import java.util.List;
 
 import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
@@ -46,10 +47,15 @@ public class ValoriStepDefs {
 
     @Dan("haalt medewerkers de partners op")
     public void haalDePartnersOp() {
-        System.out.println("Partners -> ");
         List<String> partners = partnersPage.getPartners();
+        List<String> anyOf = Arrays.asList("Pegasystems", "OutSystems", "Tricentis", "Sauce Lab", "DATPROF", "Neotys", "AppDynamics");
 
-        partners.forEach(System.out::println);
+        partners.forEach(p -> {
+            System.out.printf("Partner -> %s\n", p);
+            assertThat(anyOf.stream().anyMatch(p::contains))
+                    .as("Partner komt niet voor", p)
+                    .isTrue();
+        });
     }
 
     @AfterAll
